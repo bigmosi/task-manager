@@ -15,13 +15,12 @@ class UserCreate(BaseModel):
       return value
 
 class UserResponse(BaseModel):
-   id: str
+   id: int
    username: str
    email: str
    is_active: bool
 
-   class Config:
-      orm_mode = True
+   model_config = {"from_attributes": True}
 
 class UserUpdate(BaseModel):
    username: Optional[str] = None

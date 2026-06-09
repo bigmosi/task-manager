@@ -4,14 +4,14 @@ from app.database import Base
 import enum
 
 class PriorityEnum(str, enum.Enum):
-  low = "Low",
-  medium = "Medium",
-  high = "High"
+    low = "low"
+    medium = "medium"
+    high = "high"
 
 class StatusEnum(str, enum.Enum):
-   todo = "todo",
-   in_progress = "in_progress",
-   done = "done"
+    todo = "todo"
+    in_progress = "in_progress"
+    done = "done"
 
 
 class Task(Base):

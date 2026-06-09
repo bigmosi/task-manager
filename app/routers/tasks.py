@@ -85,14 +85,14 @@ def update_task(
    check_task_owner(task, current_user)
 
    for key, value in updated.model_dump(exclude_unset=True).items():
-       setattr(update_task, key, value)
+       setattr(task, key, value)
 
    db.commit()
    db.refresh(task)
 
    return task
 
-@router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/{task_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_task(
     task_id: int,
     db: Session = Depends(db_get),
